@@ -1,0 +1,63 @@
+{
+  "project": "Academic Elective Bidding & Allocation System",
+  "functional_requirements": [
+    {
+      "id": "FR-001",
+      "type": "Functional",
+      "description": "The system shall allow students to distribute a maximum of 100 bidding credits across their ranked elective preferences and validate prerequisite course completions.",
+      "priority": "High",
+      "acceptance_criteria": "Pass: Credits are allocated accurately and prerequisites are validated. Fail: Total allocated credits exceed 100 or unmet prerequisites are accepted.",
+      "rationale": "Ensures students submit valid elective preferences while enforcing bidding-credit and prerequisite constraints."
+    },
+    {
+      "id": "FR-002",
+      "type": "Functional",
+      "description": "The system shall allow students to view available elective courses along with relevant course information and eligibility requirements before submitting bids.",
+      "priority": "High",
+      "acceptance_criteria": "Pass: Eligible elective courses and their requirements are displayed correctly. Fail: Required course information is missing or incorrect.",
+      "rationale": "Helps students make informed elective choices."
+    },
+    {
+      "id": "FR-003",
+      "type": "Functional",
+      "description": "The system shall validate submitted student bids and prevent invalid bids, including bids that exceed the available bidding credits or violate prerequisite requirements.",
+      "priority": "High",
+      "acceptance_criteria": "Pass: Invalid bids are rejected with appropriate validation feedback. Fail: An invalid bid is accepted for allocation.",
+      "rationale": "Prevents invalid data from entering the allocation process."
+    },
+    {
+      "id": "FR-004",
+      "type": "Functional",
+      "description": "The system shall allocate electives based on submitted student bids while resolving allocation constraints and preventing timetable collisions.",
+      "priority": "High",
+      "acceptance_criteria": "Pass: Allocation satisfies bidding and schedule constraints without timetable collisions. Fail: A student is allocated conflicting electives or allocation constraints are violated.",
+      "rationale": "Ensures the final allocation is feasible and conflict-free."
+    },
+    {
+      "id": "FR-005",
+      "type": "Functional",
+      "description": "The system shall allow students to view their final elective allocation results after the allocation process is completed.",
+      "priority": "Medium",
+      "acceptance_criteria": "Pass: Students can view their allocated electives accurately. Fail: Results are unavailable or display incorrect allocations.",
+      "rationale": "Provides students with clear information about their final elective selections."
+    }
+  ],
+  "non_functional_requirements": [
+    {
+      "id": "NFR-001",
+      "type": "Performance & Security",
+      "description": "The final elective allocation solver shall process 5,000 student bids and resolve schedule conflicts in under 30 seconds while maintaining required security standards.",
+      "priority": "High",
+      "acceptance_criteria": "Pass: Benchmarking confirms processing within 30 seconds and security standards are maintained under simulated peak load. Fail: Processing exceeds 30 seconds or security requirements are not met.",
+      "rationale": "Ensures the allocation system remains responsive and reliable during peak bidding periods."
+    },
+    {
+      "id": "NFR-002",
+      "type": "Reliability & Data Integrity",
+      "description": "The system shall maintain accurate student bidding and allocation data throughout the bidding and allocation process and prevent loss or corruption of submitted bids.",
+      "priority": "High",
+      "acceptance_criteria": "Pass: Submitted bids and final allocations remain accurate after processing. Fail: Bids are lost, duplicated, corrupted, or associated with incorrect students.",
+      "rationale": "Ensures students receive correct allocations based on their actual submitted bids."
+    }
+  ]
+}
