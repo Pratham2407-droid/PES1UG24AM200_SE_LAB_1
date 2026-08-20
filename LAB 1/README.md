@@ -134,19 +134,3 @@ The system checks the bidding credit limit and verifies prerequisite requirement
 
 ---
 
-## Repository Structure
-
-```text
-PES1UG24AM200_SE_LAB/
-│
-├── README.md
-│
-├── requirements/
-│   ├── requirements.json
-│   └── requirements.html
-│
-├── uml/
-│   └── Academic_Elective_Use_Case.drawio
-│
-└── docs/
-    └── Academic_Elective_Bidding_Allocation.pdf
