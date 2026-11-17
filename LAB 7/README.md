@@ -1,34 +1,13 @@
 # Lab 7: Fuzz Testing - ATM Withdrawal
 
-This lab uses Hypothesis to fuzz three input-processing functions and hardens
-them against malformed and unexpected input.
+This submission follows the handout's three deliverables: a screenshot report, a fixed Python application, and Hypothesis tests. The ATM application keeps the `withdraw`, `pin_check`, and `note_breakup` functions from the assigned Lab 6 topic.
 
-## Run
+## Install and run
 
 ```powershell
 python -m pip install -r requirements.txt
-python -B -m pytest -p no:cacheprovider -p no:anyio -v test_atm_withdrawal.py
-python atm_withdrawal.py
+python processor.py
+python -m pytest -v test_processor.py
 ```
 
-Run the commands from this directory. Hypothesis checks generated valid values
-against their expected results and feeds arbitrary text and `None` to verify
-that invalid input is rejected cleanly with `ValueError` or `TypeError`.
-
-## Input rules
-
-- `notes_needed`: non-negative whole-number strings, either plain digits or
-  correctly comma-grouped (for example `2500` or `2,500`). Returns whole 100
-  notes; any remainder is not counted as a full note.
-- `mask_card`: exactly 16 ASCII digits, with optional spaces between four-digit
-  groups. The returned value contains only the last four digits.
-- `average_withdrawal`: a non-empty comma-separated list of non-negative whole
-  numbers. Returns the floor of the arithmetic mean.
-
-Malformed strings raise `ValueError`; values of the wrong type raise
-`TypeError`. The command-line program reports these errors and continues to the
-next prompt rather than terminating with a traceback.
-
-## Report
-
-See Lab_7_FuzzTesting_Report.pdf for the fuzz findings, corrected behavior, and test run summary.
+`test_processor.py` includes generated properties, malformed-input checks, and boundary checks for balances, daily limits, fees, PIN lockout, and note breakdown. The report includes the original-version fuzz failure, fixed application run, and passing test output.
